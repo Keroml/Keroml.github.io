@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Оставить отзыв
+{% endblock%}
+
+{% block body %}
+<h1 class = 'block_body_review'>Ваш отзыв</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post" class="form-control">
+<div class="container">
+  <form action="action_page.php">
+
+    <label for="fname">Имя<span class="required">*</span></label>
+    <input type="text" id="fname" name="firstname" placeholder="Ваше имя..."  class="form-control" required>
+
+    <label for="lname">Фамилия<span class="required">*</span></label>
+    <input type="text" id="lname" name="lastname" placeholder="Ваша фамилия..." class="form-control" required>
+
+    <label for="product">Продукт</label>
+      <select id="product" name="product">
+          <option value="TFortis PSW-2G6F+UPS-Box">TFortis PSW-2G6F+UPS-Box</option>
+          <option value="RSU TEDIX-R2D1">RSU TEDIX-R2D1</option>
+          <option value="FORT-114 EM">FORT-114 EM</option>
+      </select>
+
+    <label for="criteria1">Качество оборудования<span class="required">*</span></label>
+    <div class="rating" >
+    	<input type="radio" id="crit1-star5" name="criteria1" value="5" required>
+    	<label for="crit1-star5">★</label>
+    	<input type="radio" id="crit1-star4" name="criteria1" value="4">
+    	<label for="crit1-star4">★</label>
+    	<input type="radio" id="crit1-star3" name="criteria1" value="3">
+    	<label for="crit1-star3">★</label>
+    	<input type="radio" id="crit1-star2" name="criteria1" value="2">
+    	<label for="crit1-star2">★</label>
+    	<input type="radio" id="crit1-star1" name="criteria1" value="1">
+    	<label for="crit1-star1">★</label>
+    </div>
+
+
+    <label for="criteria2">Программное обеспечение<span class="required">*</span></label>
+    <div class="rating">
+    	<input type="radio" id="crit2-star5" name="criteria2" value="5" required>
+    	<label for="crit2-star5">★</label>
+    	<input type="radio" id="crit2-star4" name="criteria2" value="4">
+	<label for="crit2-star4">★</label>
+    	<input type="radio" id="crit2-star3" name="criteria2" value="3">
+    	<label for="crit2-star3">★</label>
+    	<input type="radio" id="crit2-star2" name="criteria2" value="2">
+    	<label for="crit2-star2">★</label>
+    	<input type="radio" id="crit2-star1" name="criteria2" value="1">
+    	<label for="crit2-star1">★</label>
+    </div>
+
+    <label for="criteria3">Техническая поддержка и сервис<span class="required">*</span></label>
+    <div class="rating">
+    	<input type="radio" id="crit3-star5" name="criteria3" value="5" required>
+    	<label for="crit3-star5">★</label>
+    	<input type="radio" id="crit3-star4" name="criteria3" value="4">
+	<label for="crit3-star4">★</label>
+    	<input type="radio" id="crit3-star3" name="criteria3" value="3">
+    	<label for="crit3-star3">★</label>
+    	<input type="radio" id="crit3-star2" name="criteria3" value="2">
+    	<label for="crit3-star2">★</label>
+    	<input type="radio" id="crit3-star1" name="criteria3" value="1">
+    	<label for="crit3-star1">★</label>
+    </div>
+
+    <label for="subject">Комментарий</label>
+    <input type="text" id="subject" name="review" placeholder="Напишите ваш отзыв здесь" style="height:100px">
+
+    <button class="btn btn-success" type="submit" >Отправить</button>
+
+  </form>
+	<div class="PS">
+		<p>* поля обязательные для заполнения</p>
+	</div>
+</div>
+</form>
+
+{% endblock%}

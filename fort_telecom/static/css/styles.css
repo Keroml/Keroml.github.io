@@ -1,0 +1,264 @@
+/* Header */
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    z-index: 1000;
+    background: white;
+    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.header__img {
+    height: 40px;
+    width: 110px;
+}
+
+body {
+    background-color: white;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+width: 100%; /* Full width */
+padding: 12px; /* Some padding */
+border: 1px solid #ccc; /* Gray border */
+border-radius: 4px; /* Rounded borders */
+box-sizing: border-box; /* Make sure that padding and width stays in place */
+margin-top: 6px; /* Add a top margin */
+margin-bottom: 16px; /* Bottom margin */
+resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+background-color: #04AA6D;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+}
+
+/* View_review */
+
+.row{
+  padding:50px 0;
+}
+.seperator{
+  margin-bottom: 30px;
+  width:35px;
+  height:3px;
+  background:#777;
+  border:none;
+}
+.title{
+  text-align: center;
+
+  .row{
+    padding: 50px 0 0;
+  }
+
+  h1{
+    text-transform: uppercase;
+  }
+
+  .seperator{
+    margin: 0 auto 10px;
+  }
+}
+.item {
+  position: relative;
+  margin-bottom: 30px;
+  min-height: 1px;
+  float: left;
+    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .item-in {
+    background: #fff;
+    padding: 40px;
+    position: relative;
+
+    &:hover:before {
+      width: 100%;
+    }
+
+    &::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 0%;
+    background: #333333;
+    right: 0px;
+    -webkit-transition: width 0.4s;
+    transition: width 0.4s;
+    }
+  }
+}
+.item{
+
+  h4{
+      font-size: 18px;
+      margin-top: 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    p{
+      font-size: 12px;
+    }
+    a{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #666666;
+      margin-top: 10px;
+
+      i {
+        opacity: 0;
+        padding-left: 0px;
+        transition: 0.4s;
+        font-size: 24px;
+        display: inline-block;
+        top: 5px;
+        position: relative;
+       }
+
+      &:hover {
+        text-decoration:none;
+        i {
+          padding-left: 10px;
+          opacity: 1;
+          font-weight: 300;
+          }
+        }
+      }
+    }
+/* Star Rating Styles */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-bottom: 16px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+    color: #ffc107;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .rating label {
+        font-size: 24px;
+    }
+}
+
+.sort-form {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sort-form .form-group {
+    margin-bottom: 15px;
+}
+
+.sort-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.sort-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.sort-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sort-form button:hover {
+    background-color: #0069d9;
+}
+
+.thanks_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.thanks_container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10px;
+}
+
+.btn_btn-success {
+    background-color: #0069d9;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.PS {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    p{
+        color: red;
+        font-size: 12px;
+    }
+}
+
+.required {
+    color: red;
+}

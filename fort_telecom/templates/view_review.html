@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Просмотр отзывов
+{% endblock%}
+
+{% block body %}
+<h1 class="block_body_thanks">Отзывы</h1>
+
+<!-- Форма для сортировки -->
+<form method="GET" action="{{ url_for('view_review') }}" class="sort-form">
+    <div class="form-group">
+        <label for="product_filter">Фильтр по продукту:</label>
+        <select name="product_filter" id="product_filter" class="form-control">
+            <option value="">Все продукты</option>
+            <option value="TFortis PSW-2G6F+UPS-Box" {% if request.args.get('product_filter') == 'TFortis PSW-2G6F+UPS-Box' %}selected{% endif %}>TFortis PSW-2G6F+UPS-Box</option>
+            <option value="RSU TEDIX-R2D1" {% if request.args.get('product_filter') == 'RSU TEDIX-R2D1' %}selected{% endif %}>RSU TEDIX-R2D1</option>
+            <option value="FORT-114 EM" {% if request.args.get('product_filter') == 'FORT-114 EM' %}selected{% endif %}>FORT-114 EM</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="sort_by">Сортировать по:</label>
+        <select name="sort_by" id="sort_by" class="form-control">
+            <option value="date_newest" {% if request.args.get('sort_by') == 'date_newest' %}selected{% endif %}>Дата (новые сначала)</option>
+            <option value="date_oldest" {% if request.args.get('sort_by') == 'date_oldest' %}selected{% endif %}>Дата (старые сначала)</option>
+            <option value="rating_highest" {% if request.args.get('sort_by') == 'rating_highest' %}selected{% endif %}>Рейтинг (высокий)</option>
+            <option value="rating_lowest" {% if request.args.get('sort_by') == 'rating_lowest' %}selected{% endif %}>Рейтинг (низкий)</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Применить</button>
+</form>
+{% endblock %}
+
+{% block content %}
+<div class="posts">
+    {% for post in posts %}
+    <div>
+        <div class="row">
+            <div class="col-md-6 item">
+                <div class="item-in">
+                    <p>{{ post.date_posted.strftime('%d/%m/%Y %H:%M') }}</p>
+                    <div class="seperator"></div>
+                    <h4>{{ post.firstname }} {{ post.lastname}}</h4>
+                    <h4>Отзыв на {{ post.product }}</h4>
+                    <h4>Качество оборудования: {{ post.criteria1 }}/5</h4>
+                    <h4>Программное обеспечение: {{ post.criteria2 }}/5</h4>
+                    <h4>Техническая поддержка и сервис: {{ post.criteria3 }}/5</h4>
+                    <h4>Средняя оценка: {{ "%.1f"|format((post.criteria1 + post.criteria2 + post.criteria3)/3) }}/5</h4>
+                    <!-- <h4>Дата: {{ post.date_posted.strftime('%Y-%m-%d %H:%M') }}</h4> -->
+                    <h4>Комментарий: {{ post.review }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock%}
